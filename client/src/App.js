@@ -97,6 +97,7 @@ function App() {
     processFiles(files);
   };
 
+  const [isPreviewVisible, setIsPreviewVisible] = useState(false); 
   const renderCsvPreview = () => {
     if (!data || data.length === 0) return null;
 
@@ -160,7 +161,19 @@ function App() {
         </div>
 
         {/* CSV Preview */}
-        {renderCsvPreview()}
+        {data && (
+          <div className="flex justify-center my-10">
+            <button
+              onClick={() => setIsPreviewVisible(!isPreviewVisible)}
+              className="mt-4 px-4 py-2 bg-black text-white rounded hover:bg-blue-800"
+            >
+              {isPreviewVisible ? 'Hide Preview' : 'Show Preview'}
+            </button>
+          </div>
+        )}
+
+        {/* Conditional Rendering of CSV Preview */}
+        {isPreviewVisible && renderCsvPreview()}
 
         {/* Chatlog */}
         <div ref={chatLogRef} className="h-80 overflow-y-auto border px-4 py-8 rounded-lg border-black shadow-lg">
