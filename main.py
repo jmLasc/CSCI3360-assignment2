@@ -19,7 +19,8 @@ app.mount("/static", StaticFiles(directory="client/build/", html=True), name="st
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://csci3360-assignment2.onrender.com"],  # Adjust this to restrict allowed origins
+    allow_origins=["https://csci3360-assignment2.onrender.com/",
+                   "*"],  # Adjust this to restrict allowed origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
