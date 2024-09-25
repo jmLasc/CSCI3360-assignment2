@@ -173,7 +173,7 @@ function App() {
 
     const limitedData = data.slice(0, 10);
     return (
-      <div className="mt-10 max-w-5xl mx-auto my-10">
+      <div className="mt-10 max-w-5xl mx-5 my-10">
         <h2 className="text-xl font-bold mb-2">CSV Preview</h2>
         <div className="overflow-auto h-60 border border-gray-300 rounded-lg shadow-lg">
           <table className="min-w-full divide-y divide-gray-200">
@@ -273,6 +273,7 @@ function App() {
                       ...msg.spec,
                       data: { values: msg.data } // Use the loaded CSV data
                     }}
+                    onNewView={() => scrollToBottom()}
                   />
                 ) : (
                   msg.text // Otherwise, render the text
