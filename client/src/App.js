@@ -8,10 +8,6 @@ function App() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([ ]);
 
-  // Errs
-  console.log("FastAPI end", url);
-  console.log("NODE_ENV", process.env.NODE_ENV);
-
   function sendMessage() { 
     if (message === "") {
       return;
@@ -79,6 +75,8 @@ function App() {
         ...prevMessages,
         { sender: "System", text: `Error fetching data: ${error.message}` },
       ]);
+      console.log("FastAPI end", url);
+      console.log("NODE_ENV", process.env.NODE_ENV);
     });
   }
   
