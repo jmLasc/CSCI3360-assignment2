@@ -110,7 +110,7 @@ function App() {
   
   const processFiles = (files) => {
     const file = files[0];
-    if (file.type !== 'text/csv') {
+    if (file.type !== 'text/csv' || file.type !== "application/vnd.ms-excel") {
       console.log(file);
       setCsvMessage('Error: Please upload a valid CSV file.');
       return;
