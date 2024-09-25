@@ -20,7 +20,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "export NODE_ENV=production; react-scripts start",
+    "start": "cross-env NODE_ENV=production react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "daisyui": "^4.12.10",
     "tailwindcss": "^3.4.13"
   }
