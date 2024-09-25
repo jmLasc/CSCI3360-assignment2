@@ -130,9 +130,7 @@ function App() {
         </div>
       </div>
     );
-  };
-
-  
+  };  
 
   // Site
   return (
